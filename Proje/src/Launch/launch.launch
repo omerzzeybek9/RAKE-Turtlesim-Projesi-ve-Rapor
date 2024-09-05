@@ -1,0 +1,12 @@
+<launch>
+  <arg name="coordinates" default="2,2,4,4,8,8"/>
+
+  <!-- Start the turtlesim node -->
+  <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+
+  <!-- Start the turtle simulation node -->
+  <node pkg="my_turtle_pkg" type="turtle_simulation.py" name="controller">
+    <param name="coordinates" value="$(arg coordinates)"/>
+  </node>
+</launch>
+
